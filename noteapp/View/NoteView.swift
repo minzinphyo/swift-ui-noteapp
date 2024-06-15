@@ -39,12 +39,12 @@ struct NoteView: View {
                             ForEach(groupedByDate[header]!) { note in
                                 NavigationLink(value: note) {
                                     //ListCellView(note: note)
-                                        
+                                    ListItemView(note: note)
                                 }
                             }
                             
                             .onDelete(perform: { indexSet in
-                                //deleteNote(in: header, at: indexSet)
+                                deleteNote(in: header, at: indexSet)
                             })
                         }
                     }
@@ -54,14 +54,15 @@ struct NoteView: View {
                 .searchable(text: $searchText)
                 .onChange(of: searchText) {
                     // MARK: Core Data Operations
-                    //vm.searchNotes(with: searchText)
+                    vm.searchNotes(with: searchText)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         
                         Button {
                             // Create a new empty note here:
-                            //createNewNote()
+                            createNote()
+                    
                             
                         } label: {
                             Image(systemName: "note.text.badge.plus")
@@ -72,15 +73,33 @@ struct NoteView: View {
                 
             } detail: {
                 // item details
-//                if let selectedNote {
-//                    EditNotesView(note: selectedNote)
-//                        .id(selectedNote)
-//                } else {
-//                    Text("Select a Note.")
-//                }
+                if let selectedNote {
+                    EditNoteView(note: selectedNote)
+                        .id(selectedNote)
+                } else {
+                    Text("Select a Note.")
+                }
                 
             }
         }
+    
+    private func createNote(){
+        selectedNote = nil
+        selectedNote = vm.createNote()
+    }
+    
+    private func deleteNote(in header: Date, at offsets: IndexSet) {
+        offsets.forEach { index in
+            if let noteToDelete = groupedByDate[header]?[index] {
+                
+                if noteToDelete == selectedNote {
+                    selectedNote = nil
+                }
+                
+                vm.deleteNote(noteToDelete)
+            }
+        }
+    }
     
 }
 

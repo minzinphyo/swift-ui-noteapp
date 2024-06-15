@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D20A4CC2C19B586001718BD /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20A4CB2C19B586001718BD /* ListItemView.swift */; };
+		0D20A4CE2C19BE52001718BD /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D20A4CD2C19BE52001718BD /* EditNoteView.swift */; };
 		0D309D512C14924900CD9457 /* noteappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D309D502C14924900CD9457 /* noteappApp.swift */; };
 		0D309D532C14924900CD9457 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D309D522C14924900CD9457 /* ContentView.swift */; };
 		0D309D552C14924C00CD9457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D309D542C14924C00CD9457 /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D20A4CB2C19B586001718BD /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
+		0D20A4CD2C19BE52001718BD /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		0D309D4D2C14924900CD9457 /* noteapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = noteapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D309D502C14924900CD9457 /* noteappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteappApp.swift; sourceTree = "<group>"; };
 		0D309D522C14924900CD9457 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				0D309D522C14924900CD9457 /* ContentView.swift */,
 				0D5F35322C17434700CDD7B8 /* NoteView.swift */,
+				0D20A4CB2C19B586001718BD /* ListItemView.swift */,
+				0D20A4CD2C19BE52001718BD /* EditNoteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D309D822C149B5800CD9457 /* NoteViewModel.swift in Sources */,
+				0D20A4CC2C19B586001718BD /* ListItemView.swift in Sources */,
 				0D309D7F2C1496FD00CD9457 /* CoreDataManager.swift in Sources */,
 				0D5F35332C17434700CDD7B8 /* NoteView.swift in Sources */,
+				0D20A4CE2C19BE52001718BD /* EditNoteView.swift in Sources */,
 				0D5F35302C1741DA00CDD7B8 /* NoteContainer.xcdatamodeld in Sources */,
 				0D309D532C14924900CD9457 /* ContentView.swift in Sources */,
 				0D309D512C14924900CD9457 /* noteappApp.swift in Sources */,

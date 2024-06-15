@@ -44,4 +44,39 @@ class NoteViewModel: ObservableObject {
                    print("Error fetching notes: \(error)")
                }
     }
+    
+    func createNote() -> NoteEntity {
+        let newNote = NoteEntity(context: manager.container.viewContext)
+        newNote.id = UUID()
+        newNote.timestamp = Date()
+        saveData()
+        fetchNotes()
+        
+      return newNote
+    }
+    
+    func deleteNote(_ note: NoteEntity) {
+        manager.container.viewContext.delete(note)
+        saveData()
+        fetchNotes() // Refresh notes list
+    }
+
+    func updateNote(_ note: NoteEntity, title: String, content: String) {
+        note.title = title
+        note.content = content
+        saveData()
+        fetchNotes() // Refresh notes list
+    }
+    
+    func searchNotes(with searchText: String) {
+        fetchNotes(with: searchText)
+    }
+    
+    private func saveData(){
+        do{
+            try manager.container.viewContext.save()
+        }catch{
+            print("Error save \(error)")
+        }
+    }
 }
